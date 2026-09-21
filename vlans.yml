@@ -1,0 +1,20 @@
+---
+- name: Configurer les VLAN et sauvegarder la configuration
+  hosts: switches
+  gather_facts: false
+
+  tasks:
+    - name: Créer les VLAN
+      cisco.ios.ios_vlans:
+        config:
+          - vlan_id: 10
+            name: POSTES
+          - vlan_id: 20
+            name: SERVEURS
+        state: merged
+
+    - name: Sauvegarder la configuration en cours
+      cisco.ios.ios_config:
+        backup: true
+        backup_options:
+          dir_path: ./sauvegardes
