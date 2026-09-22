@@ -1,6 +1,8 @@
 # Lab automatisation : configurer des équipements Cisco avec Ansible
 
 > **Statut : à réaliser.** Ce guide est préparé à partir de la documentation officielle et de mes cours ; **je ne l'ai pas encore rejoué de bout en bout**. Les commandes sont à valider en le faisant, et le journal en bas de page sera complété avec mes résultats réels (captures, erreurs rencontrées, corrections).
+>
+> **Commandes vérifiées :** ce guide a été rejoué le 22 septembre 2026 avec le vrai Ansible : les collections `cisco.ios` et `ansible.netcommon` s'installent, l'inventaire est valide, `ansible-playbook --syntax-check` passe, et les paramètres utilisés (`ios_vlans.config.vlan_id`/`name`, `state: merged`, `ios_config.backup_options.dir_path`) existent bien dans les modules installés (vérifié avec `ansible-doc`). Sans switch réel, l'exécution s'arrête proprement sur un délai de connexion, comme attendu. Vérifié ne veut pas dire réalisé : c'est l'assistant IA qui a préparé ce guide qui a rejoué ces commandes dans un conteneur jetable, pas moi sur mon propre lab. Le journal ci-dessous reste à remplir une fois que je l'aurai fait moi-même.
 
 ## Objectif
 
